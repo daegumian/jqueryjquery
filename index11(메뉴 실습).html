@@ -128,19 +128,25 @@
 
 
     <script>
-      //이렇게 해도 되고 on으로 해도되고
-
-      $(".gnb > .m").mouseover(function(e){
-          $(e.target).parent().toggleClass("on")
+        
+      //함수로 두개 나눠서
+      /* $(".gnb > .m").mouseover(function(e){
+          $(e.target).parent().addClass("on")
           $(e.target).parent().children().show()
-          
-          
       })
-      $(".gnb > .m").mouseleave(function(e){
-          $(e.target).parent().toggleClass("on")
-          $(e.target).parent().children().hide()
-      })
+      $(".gnb > .m").mouseleave(function(){
+        $(".m").removeClass("on")
+        $(".menu").hide();
+      }) */
 
+      //on으로
+      $(".gnb > .m").on("mouseover", function(e){
+        $(e.target).parent().addClass("on")
+        $(e.target).parent().children().show()
+      }).on("mouseleave", function(){
+        $(".m").removeClass("on")
+        $(".menu").hide();
+      })
 
 
 
