@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/Jquery.js"></script>
+</head>
+<body>
+  
+  <script>
+    // 스크립트를 위에 적는이유가 있나? 위에서부터 훑는다. 여기 있으면 밑의 버튼은 작동 X, 버튼 아래로 내리면 된다. 
+
+    // window.onload = function(){
+    //   //단점이자 장점 : 각페이지 1개만 사용이 가능
+    //   //js 코드~~ -> ~~~~페이지 로드 이후에 마지막 실행
+    // }
+
+    /* document를 적는 것은 문서 전체를 뜻함 */
+    $(document).ready(function(){ //매개변수로 함수 들어갈 수 있다
+      //~~~페이지 로드 이후에 마지막에 실행
+      //장점 : 여 러 개 있어도 된다. (js의 window.onload 단점 보완)
+      $("#btn").click(function(){
+        console.log(1);
+      })
+
+    })
+    
+    //순서대로 실행됨, 여러가 쌉 가능
+    $(document).ready(function(){
+      console.log("페이지 로드 이후에 실행됨.");
+    })
+
+  </script>
+
+  <button type="button" id="btn">버튼</button>
+
+
+</body>
+</html>

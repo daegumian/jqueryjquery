@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/Jquery.js"></script>
+</head>
+<body>
+
+  <ul id="test">
+
+
+  </ul>
+
+  <script>
+    setTimeout( () => {
+      document.getElementById("test").innerHTML = "<li>1</li><li>2</li>"
+
+    }, 1500);
+
+    //당연히 안됨. 위의 코드는 3초뒤에 실현이니. 아래 코드는 이미 그전에 지나가고 나서임
+    // $("#test > li").click(function(){
+    //   console.log("이건 동작을 할까요?");
+    // })
+
+    //이벤트 위임 on(이벤트 종류, 위임할 태그, 실행시킬 함수)
+    $("#test").on("click","li", function(){
+      console.log("하하호호 되지용~");
+    })
+
+  </script>
+  
+    <hr/>
+
+    <div style="width: 100px; height: 100px; border: 1px solid #777;" class="x">
+
+    </div>
+
+    <script>
+
+      //on역할 다양함
+      //이벤트체이닝 on을 쓰면 이벤트를 연결해서 쓸 수 있다.
+      $(".x").on("mouseenter", function(){
+        console.log("들어갈때 잘 실행됨");
+      }).on("mouseleave", function(){
+        console.log('나갈때 잘 실행됨');
+      })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/Jquery.js"></script>
+</head>
+<body>
+
+  <script>
+
+    // $.ajax({키:값,키:값,키:값})
+    $.ajax({
+      url : "http://localhost:8181/api/v1/getInfo",
+      type : "post",
+      contentType :"application/json",//필수 //내가 보내는 데이터에 대한 타입
+      dataType : "json",//html,xml,text //서버에서 돌려받은 데이터에 대한 타입 (json타입으로)
+      data : JSON.stringify({"num": 1, "name":"박동훈"}),
+      success : function(data){
+        console.log(data);
+      }, //요청 성공시 콜백 받을 함수
+      error : function(status, error){
+        console.log(status)
+        console.log(error);
+      }, //에러 발생시 콜백 받을 함수
+    })
+
+    $.ajax({
+      url : "http://localhost:8181/api/v1/getData2?num=1&name=홍길동",
+      type: "get",
+      success : function(data){
+        console.log(data)
+      },
+      error : function(status, error){
+        console.log(status)
+        console.log(error)
+      }
+    })
+
+  </script>
+  
+</body>
+</html>

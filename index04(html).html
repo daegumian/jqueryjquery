@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/Jquery.js"></script>
+</head>
+<body>
+
+  <div class="test"></div>
+  <div class="test2"></div>
+
+  <script>
+    /* js vs jquery */
+    //값 넣기
+    //js
+    // document.querySelector(".test").innerHTML = "값";
+
+    //jquery 위와 동일
+    $(".test").html("<a href='#'>박동훈</a>");
+
+    //값 얻기
+    //js
+    // console.log(document.querySelector(".test").innerHTML);
+
+    //jquery
+    console.log($(".test").html());
+
+    //순수한 text 형태로 넣기
+    $(".test").text("<h4>순수한 텍스트</h4>"); //현재 코드는 이 코드가 위의 <a>태그를 덮어버림
+
+
+  </script>
+  
+</body>
+</html>
