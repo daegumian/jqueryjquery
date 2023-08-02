@@ -46,7 +46,7 @@
     
     <header>
         <div class="center">
-            <h2>야간모드</h2>
+            <h2>주간모드</h2>
             <button type="button" id="btn1" class="dark">어둡게보기</button>
 
             <button type="button" id="btn2" class="name">이름보기</button>
@@ -57,14 +57,12 @@
     <section>
         <div class="content">
             <div class="left">
-                <div class="inner"><img src="member8.jpg"></div>
+                <div class="inner"><img src="86.jpg"></div>
             </div>
             <div class="right">
                 <div class="inner">
-                    <p>자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 
-                      이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 
-                      또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다</p>
-                    <a href="https://www.naver.com">위키백과</a>
+                    <p>공식적으로는 존재하지 않는 지역에서 모종의 낙인을 부여받은 채 날마다 무인기계의 침략에 맞서 싸우는 소년소녀들의 비참하고 잔인한 세계에서 살아남기 위해 발버둥치는 처절한 이야기를 담은 작품이다.</p>
+                    <a href="https://namu.wiki/w/86%20-%EC%97%90%EC%9D%B4%ED%8B%B0%EC%8B%9D%EC%8A%A4-">나무위키</a>
                 </div>
             </div>            
         </div>
@@ -74,48 +72,40 @@
     
     <script>
       
+      $("#btn1").click(function(e){
+
+        console.log($(e.target).attr("class"));
+        if($(e.target).attr("class") == "dark"){
+            $("#btn1").toggleClass("dark");
+            $("body").css("backgroundColor","black").css("color","white");
+            $("btn1").html("밝게보기")
+            $("div > h2").html("야간모드")
+
+        }else{
+            $("#btn1").toggleClass("dark");
+            $("body").css("backgroundColor","white").css("color","black");
+            $("btn1").html("어둡게보기")
+            $("div > h2").html("주간모드")
+        }
+      })
+
+      $("#btn2").click(function(e){
+        if($($(e.target)).attr("class") == "name"){
+            $("#btn2").toggleClass("name");
+            $("#btn2").html("설명보기")
+            $(".inner > p").html("<p>에이티식스 애니는 재밌따!</p>");
+            $(".inner > a").hide()
+
+        }else{
+            $("#btn2").toggleClass("name");
+            $("#btn2").html("이름보기")
+            $(".inner > p").html("<p>공식적으로는 존재하지 않는 지역에서 모종의 낙인을 부여받은 채 날마다 무인기계의 침략에 맞서 싸우는 소년소녀들의 비참하고 잔인한 세계에서 살아남기 위해 발버둥치는 처절한 이야기를 담은 작품이다.</p>");
+            $(".inner > a").show()
+
+        }
+      })
      
-      /* $(".dark").click(function(){
-        $("body").css("backgroundColor", "black").css("color", "white")
-        $("#btn1").html("밝게보기")
-        $("#btn1").toggleClass("dark")
-        $("#btn1").toggleClass("light")
-      })
-      
-      $(".light").click(function(){
-        $("body").css("backgroundColor", "white").css("color", "black")
-        $("#btn1").html("어둡게보기")
-      }) */
-
-      //쌤
-
-      //제이쿼리로~처리
-      $('#btn1').click(function(){
-        if( $('#btn1').attr("class") == 'dark'){
-          $("#btn1").html("밝게보기");
-          $("body").css("backgroundColor", "black");
-          $("p, h2,a").css("color","white");
-          $("#btn1").toggleClass("dark");
-        }else{
-          $("#btn1").html("어둡게보기");
-          $("body").css("backgroundColor", "white");
-          $("p, h2,a").css("color","black");
-          $("#btn1").toggleClass("dark");
-        }
-      })
-
-      $('#btn2').click(function(){
-        if($('#btn2').attr("class") == 'name'){
-           $(".inner > p").html("<h3>김태리</h3>");
-           $(".inner > a").hide(); //display : none
-          $("#btn2").toggleClass("name");
-        }else{
-          $(".inner > p").html("<p>자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다</p>");
-          $(".inner > a").show(); //display : 보여짐
-          $("#btn2").toggleClass("name");
-        }
-
-      })
+   
 
 
 
