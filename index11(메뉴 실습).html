@@ -68,7 +68,24 @@
     </style>
 
     <script src="js/Jquery.js"></script>
- 
+
+    <script>
+      $(document).ready(function(){
+
+        $(".gnb > .m").mouseenter(function(){
+          console.log(1);
+          $(event.currentTarget).addClass("on");
+          $(event.currentTarget).find(".menu").show(); //내 기준 밑으로 .menu를 찾음
+        })
+        $(".gnb > .m").mouseleave( () => {
+          $(event.currentTarget).removeClass("on");
+          $(event.currentTarget).find(".menu").hide(); //내 기준 밑으로 .menu를 찾음
+        })
+
+
+      })
+
+    </script>
 
 </head>
 <body>
@@ -139,14 +156,17 @@
         $(".menu").hide();
       }) */
 
-      //on으로
-      $(".gnb > .m").on("mouseover", function(e){
+      //on으로도
+      /* $(".gnb > .m").on("mouseover", function(e){
         $(e.target).parent().addClass("on")
         $(e.target).parent().children().show()
       }).on("mouseleave", function(){
         $(".m").removeClass("on")
         $(".menu").hide();
-      })
+      }) */
+
+
+      
 
 
 
